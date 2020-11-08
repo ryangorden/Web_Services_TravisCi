@@ -1,0 +1,32 @@
+---
+# Use a Python-based system in a 3.7 virtual environment.
+# Per Travis docs, xenial must be used for Python 3.7 or newer.
+dist: "bionic"
+language: "python"
+python:
+  - "3.6.9"
+
+# Need docker and docker-compose support.
+#services:
+#  - "docker"
+
+# Install required Python packages for testing and operation.
+install:
+  - "pip install -r requirements.txt"
+
+# Execute the linting and unit tests before spinning up containers.
+# Once containers are up, print them out for logging purposes.
+before_script:
+  - "pylint chapter_9/*.py"
+  - "pytest --verbose chapter_9/test_flask5.py"
+#  - "docker-compose up -d"
+#  - "docker container ls"
+
+# Run the system tests to ensure the web server is functional.
+script:
+  - "pytest --verbose chapter_9/test_system5.py"
+
+# Not completely necessary, but gracefully tear down containers.
+after_script:
+#  - "docker-compose down"
+...
