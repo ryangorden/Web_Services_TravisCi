@@ -17,7 +17,9 @@ install:
 # Execute the linting and unit tests before spinning up containers.
 # Once containers are up, print them out for logging purposes.
 before_script:
-  - "pylint chapter_9/*.py"
+  - "pylint chapter_9/flask5.py"
+  - "pylint chapter_9/test_flask5.py"
+  - "pylint chapter_9/test_system5.py"
   - "pytest --verbose chapter_9/test_flask5.py"
 #  - "docker-compose up -d"
 #  - "docker container ls"
