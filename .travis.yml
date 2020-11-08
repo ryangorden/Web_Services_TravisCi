@@ -4,7 +4,7 @@
 dist: "bionic"
 language: "python"
 python:
-  - "3.6.9"
+  - "3.7"
 
 # Need docker and docker-compose support.
 #services:
