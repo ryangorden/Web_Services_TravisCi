@@ -18,9 +18,9 @@ install:
 # Once containers are up, print them out for logging purposes.
 before_script:
   - "pylint chapter_9/flask5.py"
-  - "pylint chapter_9/test_flask5.py"
-  - "pylint chapter_9/test_system5.py"
-  - "pytest --verbose chapter_9/test_flask5.py"
+#  - "pylint chapter_9/test_flask5.py"
+#  - "pylint chapter_9/test_system5.py"
+#  - "pytest --verbose chapter_9/test_flask5.py"
 #  - "docker-compose up -d"
 #  - "docker container ls"
 
@@ -29,6 +29,6 @@ script:
   - "pytest --verbose chapter_9/test_system5.py"
 
 # Not completely necessary, but gracefully tear down containers.
-after_script:
+#after_script:
 #  - "docker-compose down"
 ...
